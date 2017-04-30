@@ -1,0 +1,76 @@
+{{> menu id="home" }}
+
+<div class="ui segment">
+
+  {{#if user}}
+
+    <h1>Welcome back, {{ user.firstName }}!</h1>
+    <div class="ui divider"></div>
+
+    <table class="ui celled table">
+    <thead>
+      <tr>
+        <th colspan="2">User Statistics</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Total Bookmarks</td>
+        <td>{{ userBookmarkCount}}</td>
+      </tr>
+      <tr>
+        <td>Total Folders</td>
+        <td>{{ userFolderCount }}</td>
+      </tr>
+      <tr>
+        <td>Average Bookmarks in each Folder</td>
+        <td>{{ userAverageCount }}</td>
+      </tr>
+      <tr>
+        <td>Folder with Most Bookmarks</td>
+        <td>{{ folderWithMostBookmarks }}</td>
+      </tr>
+      <tr>
+        <td>Folder with Least Bookmarks</td>
+        <td>{{ folderWithLeastBookmarks }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {{else}}
+
+    <h1>Welcome to MyBewk!</h1>
+    <div class="ui divider"></div>
+
+    <p>Please sign in or sign up above to access all our great features!</p>
+
+  {{/if}}
+
+  <!-- Site wide stats, shown regardless -->
+  <table class="ui celled table">
+  <thead>
+    <tr>
+      <th colspan="2">Sitewide Statistics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bookmarks Served</td>
+      <td>{{ bookmarkCount }}</td>
+    </tr>
+    <tr>
+      <td>Average Bookmarks per User</td>
+      <td>{{ bookmarkAverage }}</td>
+    </tr>
+    <tr>
+      <td>User with Most Bookmarks</td>
+      <td>{{ userWithMostBookmarks }}</td>
+    </tr>
+    <tr>
+      <td>User with Least Bookmarks</td>
+      <td>{{ userWithLeastBookmarks }}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

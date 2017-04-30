@@ -1,0 +1,25 @@
+<nav class="ui menu">
+  <header class="ui header item">
+    <a href="/"><i class="icon mail square"></i> MyBewk</a>
+  </header>
+  <a href="/" id="home" class="item">Home</a>
+  {{#if user}}
+  <a href="/bookmarks/" id="bookmarks" class="item">Bookmarks</a>
+  {{/if}}
+  <a href="/bookmarks/public/" id="public-bookmarks" class="item">Public Bookmarks</a>
+
+
+  <div class="right menu">
+    {{#if user}}
+      <a href="/account/edit/" id="editaccount" class="item">Edit Account</a>
+      <a href="/auth/signout/" id="signout" class="item">Sign Out</a>
+    {{else}}
+      <a href="/auth/signin/" id="signin" class="item">Sign In</a>
+      <a href="/auth/signup/" id="signup" class="item">Sign Up</a>
+    {{/if}}
+  </div>
+</nav>
+
+<script>
+  $('#{{id}}').addClass('active item');
+</script>

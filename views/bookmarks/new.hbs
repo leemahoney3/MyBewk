@@ -1,0 +1,37 @@
+{{> menu id="bookmarks" }}
+
+<section class="ui segment noBorder">
+
+  <h1 class="ui center aligned icon header">
+    <i class="circular icon write"></i>
+    New Folder
+  </h1>
+
+  {{#if error }}
+
+  <div class="ui negative message">
+    <div class="header">Whoops, Something went wrong...</div>
+    <p>{{ error }}</p>
+  </div>
+
+  {{/if}}
+
+  <form action="/bookmarks/new/" method="post" class="ui stacked segment form">
+    <div class="required field">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" placeholder="Folder Title">
+    </div>
+    <div class="required field">
+      <label for="description">Description</label>
+      <textarea name="description" id="description" cols="30" rows="10" placeholder="Folder Description"></textarea>
+    </div>
+    <div class="required field">
+      <div class="ui checkbox">
+        <input type="checkbox" name="private">
+        <label>Make this collection private</label>
+      </div>
+    </div>
+    <button class="ui blue submit icon button"><i class="icon plus"></i> Add Folder</button>
+  </form>
+
+</section>

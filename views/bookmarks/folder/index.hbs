@@ -1,0 +1,27 @@
+{{> menu id="bookmarks" }}
+
+<section class="ui middle aligned segment noBorder">
+
+  <h1 class="ui dividing center aligned icon header">
+    <i class="circular icon folder open"></i>
+    {{ folder.title }}
+    <br />
+    <small style="font-size: 12px; color: #999;">{{ folder.bookmarks.length }} Bookmarks</small>
+  </h1>
+
+  <a href="/bookmarks/folder/{{ folder.id }}/new/" class="ui primary icon button"><i class="icon plus"></i> New Bookmark</a>
+
+  {{#if folder.bookmarks.length }}
+
+    {{> bookmarks}}
+
+  {{ else }}
+
+    <div class="ui message">
+      <div class="header">No Bookmarks</div>
+      <p>Hey! It seems you haven't created any bookmarks yet! Why not create one now?</p>
+    </div>
+
+  {{/if}}
+
+</section>

@@ -1,0 +1,23 @@
+{{> menu id="public-bookmarks" }}
+
+<section class="ui middle aligned segment noBorder">
+
+  <h1 class="ui dividing center aligned icon header">
+    <i class="circular icon users"></i>
+    Public Bookmarks
+  </h1>
+
+  {{#if publicFolders.length }}
+
+    {{> publicFolders}}
+
+  {{ else }}
+
+    <div class="ui message">
+      <div class="header">No Public Bookmark Folders</div>
+      <p>Hey! It seems nobody has any public bookmarks! Why not be the first?</p>
+    </div>
+
+  {{/if}}
+
+</section>

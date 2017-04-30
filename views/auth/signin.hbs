@@ -1,0 +1,39 @@
+{{> menu id="signin" }}
+
+<div class="ui clearing segment">
+
+  <h2 class="ui header">Sign In</h2>
+  <p>Please enter your details below to in to our service</p>
+
+  <div class="ui divider"></div>
+
+  {{#if success}}
+    <div class="ui success message">
+      <i class="close icon"></i>
+      <div class="header">
+        Your registration was successful!
+      </div>
+      <p>You can now sign in with the details provided.</p>
+    </div>
+  {{/if}}
+
+  {{#if error}}
+    <div class="ui error message">
+      <i class="close icon"></i>
+      <div class="header">
+        There was an error with your registration
+      </div>
+      <p>{{ error }}</p>
+    </div>
+  {{/if}}
+  <form action="/auth/signin/" method="post" class="ui form">
+    <div class="field">
+      <input type="email" id="email" name="email" placeholder="Email">
+    </div>
+    <div class="field">
+      <input type="password" id="password" name="password" placeholder="Password">
+    </div>
+    <button class="ui right floated secondary button">Sign In</button>
+  </form>
+
+</div>

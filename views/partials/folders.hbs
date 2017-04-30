@@ -1,0 +1,35 @@
+<br /><br />
+<div class="ui cards">
+
+  {{#each folders}}
+
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          {{ title }}
+        </div>
+        <div class="meta">
+          {{ bookmarks.length }} Bookmarks
+        </div>
+        <div class="description">
+          {{ description }}
+          {{#if private}}
+            <br /><br />
+            <a class="ui red label">Private Folder</a>
+          {{else}}
+            <br /><br />
+            <a class="ui green label">Public Folder</a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui two buttons">
+          <a href="/bookmarks/folder/{{ id }}/" class="ui icon button"><i class="icon folder open"></i> View</a>
+          <a href="/bookmarks/delete/{{ id}}/" class="ui icon button"><i class="icon trash"></i> Delete</a>
+        </div>
+      </div>
+    </div>
+
+  {{/each}}
+
+</div>

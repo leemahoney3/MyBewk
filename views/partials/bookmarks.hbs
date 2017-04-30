@@ -1,0 +1,30 @@
+<br /><br />
+<div class="ui cards">
+
+  {{#each folder.bookmarks}}
+
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        <a href="{{ link }}" target="_blank">{{ title }}</a>
+      </div>
+    </div>
+    <div class="image">
+      <img class="ui small image" src="{{ image }}">
+    </div>
+    <div class="content">
+      <div class="description">
+        {{ summary }}
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <a href="{{ link }}" target="_blank" class="ui icon button"><i class="icon mail forward"></i> Visit</a>
+        <a href="/bookmarks/folder/{{ ../folder.id }}/delete/{{ id }}/?i={{ image }}" class="ui icon button"><i class="icon trash"></i> Delete</a>
+      </div>
+    </div>
+  </div>
+
+  {{/each}}
+
+</div>

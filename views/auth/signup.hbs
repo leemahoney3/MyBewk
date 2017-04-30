@@ -1,0 +1,45 @@
+{{> menu id="signup" }}
+
+<div class="ui clearing segment">
+
+  <h2 class="ui header">Sign Up</h2>
+  <p>Please enter your details below to sign up for our service</p>
+
+  <div class="ui divider"></div>
+
+  {{#if success}}
+    <div class="ui success message">
+      <i class="close icon"></i>
+      <div class="header">
+        Your registration was successful!
+      </div>
+      <p>You can now sign in with the details provided.</p>
+    </div>
+  {{/if}}
+
+  {{#if error}}
+    <div class="ui error message">
+      <i class="close icon"></i>
+      <div class="header">
+        There was an error with your registration
+      </div>
+      <p>{{ error }}</p>
+    </div>
+  {{/if}}
+  <form action="/auth/signup/" method="post" class="ui form">
+    <div class="required field">
+      <input type="text" id="firstName" name="firstName" placeholder="First Name">
+    </div>
+    <div class="required field">
+      <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+    </div>
+    <div class="required field">
+      <input type="email" id="email" name="email" placeholder="Email">
+    </div>
+    <div class="required field">
+      <input type="password" id="password" name="password" placeholder="Password">
+    </div>
+    <button class="ui right floated secondary button">Sign Up</button>
+  </form>
+
+</div>

@@ -1,0 +1,45 @@
+{{> menu id="editaccount" }}
+
+<div class="ui clearing segment">
+
+  <h2 class="ui header">Edit Account</h2>
+  <p>You may update your account details below.</p>
+
+  <div class="ui divider"></div>
+
+  {{#if success}}
+    <div class="ui success message">
+      <i class="close icon"></i>
+      <div class="header">
+        Account updated!
+      </div>
+      <p>Your account has been successfully updated.</p>
+    </div>
+  {{/if}}
+
+  {{#if error}}
+    <div class="ui error message">
+      <i class="close icon"></i>
+      <div class="header">
+        There was a problem updating your account
+      </div>
+      <p>{{ error }}</p>
+    </div>
+  {{/if}}
+  <form action="/account/edit/" method="post" class="ui form">
+    <div class="field">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" placeholder="First Name" value="{{ user.firstName }}">
+    </div>
+    <div class="field">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" placeholder="Last Name" value="{{ user.lastName }}">
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email" value="{{ user.email }}">
+    </div>
+    <button class="ui right floated secondary button">Update</button>
+  </form>
+
+</div>

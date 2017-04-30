@@ -1,0 +1,25 @@
+<br /><br />
+<div class="ui cards">
+
+  {{#each publicFolders}}
+
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          {{ title }}
+        </div>
+        <div class="meta">
+          {{ bookmarks.length }} Bookmarks
+        </div>
+        <div class="description">
+          {{ description }}
+        </div>
+      </div>
+      <div class="extra content">
+          <a href="/bookmarks/public/{{ id }}/" class="ui bottom attached button"><i class="icon folder open"></i> View</a>
+      </div>
+    </div>
+
+  {{/each}}
+
+</div>
