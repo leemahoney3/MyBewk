@@ -32,6 +32,6 @@ app.engine('.hbs', handlebars({
 
 app.set('view engine', '.hbs');
 
-const listener = app.listen(process.env.PORT || 4040, function () {
+const listener = app.listen(process.env.PORT || 80, function () {
   console.info(`MyBewk started on port ${listener.address().port}`);
 });
