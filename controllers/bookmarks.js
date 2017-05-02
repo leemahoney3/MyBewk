@@ -156,20 +156,21 @@ const bookmarks = {
     // Handle Image Upload.
     const image = request.files.picture;
 
-    image.mv('tempimage', err => {
-      if (!err) {
-        cloudinary.uploader.upload('tempimage', result => {
-          //console.log(result);
-          data.image = result.url;
-        });
-      }
-    });
-
     if (!data.link.startsWith("http://")) {
       data.link = 'http://' + data.link;
     }
 
-    if (data.title != '' && data.link != '' && data.summary != '') {
+    if (data.title != '' && data.link != '' && data.summary != '' && image != null) {
+
+      image.mv('tempimage', err => {
+        if (!err) {
+          cloudinary.uploader.upload('tempimage', result => {
+            //console.log(result);
+            data.image = result.url;
+          });
+        }
+      });
+
 
       bookmarkModel.addBookmark(folderid, data);
       response.redirect('/bookmarks/folder/' + folderid + '/');
