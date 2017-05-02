@@ -8,6 +8,7 @@ WIT Web Development Assignment 2.
 
 Included:
 * Authentication, option to register, signin and edit profile.
+* Bcrypt Secured passwords
 * Complete bookmark system: add folder, delete folder, add and delete bookmarks.
 * Image upload relating to bookmarks.
 * Public and private bookmarks with public bookmark folder and bookmarks view.
@@ -20,27 +21,27 @@ How to Run:
 
 2. Using Terminal or equivalent, enter the following commands inside that folder:
 
-******************** 
+********************
 sudo npm install
 ********************
 
 Then
 
-******************** 
+********************
 sudo npm install -g nodemon
-******************** 
+********************
 
 Finally
 
-******************** 
+********************
 sudo nodemon app.js
-******************** 
+********************
 
 The application will start on http://localhost:4040
 
 This application is also deployed on my own personal server:
 
-http://leemahoney.me:4040
+http://leemahoney.me
 
 Code can also be found at:
 

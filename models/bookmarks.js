@@ -27,7 +27,16 @@ const bookmarks = {
 
   // Counts the average bookmarks per user.
   countAverageBookmarksPerUser(userCount) {
-    return this.countBookmarks() / userCount;
+
+
+    let average = this.countBookmarks() / userCount;
+
+    if (isNaN(average)) {
+      average = 0;
+    }
+
+    return average;
+
   },
 
   countUserAverageBookmarks(userId) {

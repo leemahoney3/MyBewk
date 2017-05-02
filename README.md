@@ -29,6 +29,6 @@ The application will start on http://localhost:4040
 
 This application is also deployed on my own personal server:
 
-http://leemahoney.me:4040
+http://leemahoney.me
 
 Thanks for viewing.
